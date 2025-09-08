@@ -1,67 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="icon" href="assets/icons/favicon-16x16.png" type="image/gif" sizes="16x16">
-    <link rel="icon" href="assets/icons/favicon-32x32.png" type="image/gif" sizes="32x32">
-    <link rel="icon" href="assets/icons/android-chrome-192x192.png" type="image/gif" sizes="192x192">
-    <link rel="icon" href="assets/icons/android-chrome-512x512.png" type="image/gif" sizes="512x512">
-    <link rel="icon" href="assets/icons/apple-touch-icon.png">
-    <link rel="icon" href="assets/icons/favicon.ico">
+    <link
+      rel="icon"
+      href="assets/icons/favicon-16x16.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      href="assets/icons/favicon-32x32.png"
+      type="image/gif"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="assets/icons/android-chrome-192x192.png"
+      type="image/gif"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      href="assets/icons/android-chrome-512x512.png"
+      type="image/gif"
+      sizes="512x512"
+    />
+    <link rel="icon" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" href="assets/icons/favicon.ico" />
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles/standard.css">
-    <link rel="stylesheet" href="styles/assets.css">
-    <link rel="stylesheet" href="styles/fonts.css">
-    <link rel="stylesheet" href="styles/basket.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/standard.css" />
+    <link rel="stylesheet" href="styles/assets.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/basket.css" />
+  </head>
+  <body onload="init()">
     <header>
-        <div class="content-limitation">
-            <div class="header-container">
-                <img class="logo-Header" src="assets/img/Logo.png" alt="Bestellapp Logo">
-                <nav>
-                    <button onclick="toggleOverlay()" class="hamburger-menu" id="menu_toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </nav>
-            </div>
+      <div class="content-limitation">
+        <div class="header-container">
+          <img
+            class="logo-Header"
+            src="assets/img/Logo.png"
+            alt="Bestellapp Logo"
+          />
+          <nav>
+            <button
+              onclick="toggleOverlay()"
+              class="hamburger-menu"
+              id="menu_toggle"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </nav>
         </div>
+      </div>
     </header>
 
     <main class="content-limitation">
-        <div class="hero"></div>
-        <div>
-        <h1>Ha Noi Pho</h1>
-        <p>Bewertung: 4,8 von 5 Sternen</p>
-        </div>    
-        <div class="categories">
-                <img src="#" alt="#">
-                <p>Hauptgerichte</p>
-                <p>Beilagen</p>
+      <div class="content-wrapper">
+        <div class="hero-img"></div>
+        <div class="logo-wrapper">
+          <img
+            class="bowl-Icon"
+            src="/assets/icons/soup-cup-and-soup-icon.svg"
+          />
         </div>
-        <div class="img-menu"></div>
 
-        <section class="menu" id="menu"></section> 
+        <div class="restaurant-info">
+          <div class="flexbox">
+            <h1>Ha Noi Pho</h1>
+            <span>- Echtes Vietnam. Echtes Pho.</span>
+          </div>
+          <p>Bewertung: 4,2 von 5 Sternen</p>
+        </div>
+        <nav class="categories">
+          <img
+            src="/assets/icons/angle-circle-right-icon.png"
+            alt="Pfeil Icon"
+          />
+          <a href="#">Hauptgerichte</a>
+          <a href="#">Beilagen</a>
+        </nav>
+      </div>
+      <div class="img-menu"></div>
+
+      <section class="menu" id="menu"></section>
+
+      <section id="overlay" class="overlay open">
+        <h2>Warenkorb</h2>
+        <div id="contentOverlay" class="contentOverlay"></div>
+      </section>
     </main>
 
-    <section id="overlay" class="overlay"></section>
-    
     <footer>
-        <div class="footer-container content-limitation">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">AGB</a>
-        </div>
+      <div class="footer-container content-limitation">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
     </footer>
 
     <script src="scripts/db.js"></script>
     <script src="scripts/template.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

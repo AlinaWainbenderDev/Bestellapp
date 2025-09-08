@@ -11,74 +11,53 @@ header{
     align-items: center;
 }
 
-.logo-Header{
-    width: 200px;
-    padding: 20px 30px;
-}
-
-.hamburger-menu {
-  background-color: rgb(255,128,0);
-  border: 1px;
-  cursor: pointer;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  margin-right: 32px;
-}
-
-.hamburger-menu span {
-  display: block;
-  width: 40px;
-  height: 5px;
-  background-color: white;
-}
-
-.hero{
-    background-image: url(/assets/img/thach-nguyen-VAUzvk7rnNo-unsplash.jpg);
-    width: 100%;
-    min-height: 200px;
-    max-height: 300px;
-    object-fit: cover;
-    background-size: cover;
-    background-position: center;
-}
-
-.img-menu{
-    background-image: url(/assets/img/bea-beste-P6qHXfegYOA-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0;
-}
-
-.img-menu img{
-    width: 100%;
-    height: 200px;
+.restaurant-info{
+    padding-left: 2%;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .categories{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    gap: 2vw;
+    background-color: rgba(253, 185, 117, 0.982);
+    padding-left: 2%;
+}
+
+.categories p {
+    margin: 0px;
 }
 
 .menu{
-    padding: 20px 0;
-    width: calc(100% - 800px);
-    max-height: 50vh;
+    flex: 1;
+    padding: 2vh 0;
+    width: calc(100% - 25vw);
     overflow-y: auto;  
-    /* background-color: bisque; */
-    margin: 32px;
+    margin: 2%;
 }
 
-.menu::-webkit-scrollbar{
-    width: 8px;
+.style-dishContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.menu::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 4px;
+.dish{
+     border: 3px solid rgba(253, 185, 117, 0.982);
+     border-radius: 10px;
+     margin: 10px;
+     padding: 10px;
+}
+
+.dish p { 
+    margin: 8px;
+}
+
+.dish-price{
+    color: rgb(255,128,0);
+    font-weight: 700;
 }
 
 footer{
@@ -92,9 +71,9 @@ footer a{
 
 .footer-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px 30px;
-    gap: 10px;
+    padding: 2vh 3vw;
+    gap: 1.5vw;
 }
 

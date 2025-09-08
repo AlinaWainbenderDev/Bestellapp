@@ -1,0 +1,99 @@
+.logo-Header{
+    width: clamp(100px, 12vw, 140px);
+    padding: 1vh 2vw;
+}
+
+.logo-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+    border: 6px solid rgb(245, 245, 245);
+    border-radius: 75px;
+    overflow: hidden;
+    border-color: white;
+    background-color: rgb(255,128,0);
+    margin: -60px auto 0 auto; 
+}
+
+.logo-wrapper img{
+  -webkit-filter: invert(100%); 
+          filter: invert(100%);  
+}
+
+.bowl-Icon{
+  width: 80px;
+}
+
+.hamburger-menu {
+  background-color: rgb(255,128,0);
+  border: 1px;
+  cursor: pointer;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-right: 32px;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: white;
+}
+
+.hero-img{
+    background-image: url(/assets/img/thach-nguyen-VAUzvk7rnNo-unsplash.jpg);
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.img-menu{
+    background-image: url(/assets/img/bea-beste-P6qHXfegYOA-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    height: 20vh;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.categories img{
+  width: 2em;
+}
+
+.add-button{
+  position: relative;
+   width: 32px;  
+  height: 32px;
+  background: none;
+  border: 2px solid rgb(255,128,0);
+}
+
+.add-button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgb(255,128,0);
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+}
+
+.add-button .horizontal {
+  width: 20px;
+  height: 3px;
+}
+
+.add-button .vertical {
+  width: 3px;
+  height: 20px;
+}
+
+.trash-icon{
+  width: 20px;
+}
