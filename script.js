@@ -12,20 +12,21 @@ function toggleOverlay(){
 
 function renderMenu(){
     let menuRef = document.getElementById('menu');
-    let titleMenu = `<h2>Hauptgerichte</h2>`;
+    let renderedMenu = `<h2>Hauptgerichte</h2>`;
 
     for (let index = 0; index < dishes.length; index++) {
-        titleMenu += templateMenu(index);
+        renderedMenu += templateMenu(index);
     }
 
-    menuRef.innerHTML = titleMenu;
+    menuRef.innerHTML = renderedMenu;
 }
 
 function renderCart(){
     let contentCartRef = document.getElementById("contentCart");
     contentCartRef.innerHTML = "";
 
-    const { cartItemSums, total } = calculateCart();
+    const cartItemSums = getCartItemTotals();
+    const total = calculateCartTotal();
 
       for (let index = 0; index < cart.length; index++) {
         let item = cart[index];
@@ -82,16 +83,20 @@ function updateSum(index) {
     sumPerDishRef.innerText = (currentAmount * price).toFixed(2) + " €";
 }
 
-function calculateCart() {
-    let total = 0;
-    const cartItemSums = []; 
-
-    for (let i = 0; i < cart.length; i++) {
-        const cartItem = cart[i];
-        const sum = cartItem.price * cartItem.amount;
-        cartItemSums.push(sum);
-        total += sum;
+function getCartItemTotals(){
+    const totals = [];
+    for (let index = 0; index < cart.length; index++) {
+        const item = cart[index]
+        totals.push(item.price * item.amount);
     }
+    return totals;
+}
 
-    return { cartItemSums, total };
+function calculateCartTotal(){
+    let total = 0;
+    for (let index = 0; index < cart.length; index++) {
+        const cartItem = cart[index];
+        total += cartItem.price * cartItem.amount; 
+    }
+    return total;
 }
