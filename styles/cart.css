@@ -1,4 +1,4 @@
-.overlay{
+.cart{
     position: fixed;
     top: 80px;
     right: 0;            
@@ -16,22 +16,22 @@
     padding: 20px;
 }
 
-.overlay.open {
+.cart.open {
      transform: translateX(0);    
 }
 
-.contentOverlay{
+.contentCart{
     width: auto;          
     height: auto;
 }
 
-.basket-dish-area{
+.cart-dish-area{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding-top: 10px;
 }
 
-.basketDishContainer{
+.cartDishContainer{
     padding: 10px;
 }
