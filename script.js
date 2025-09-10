@@ -39,48 +39,44 @@ function renderCart(){
 
 function addToCart(index){
     let dish = dishes[index];
-    const cartItem = cart.find(item => item.name === dish.name);
+    let indexInCart = isInCart(dish.name); 
 
-    if (cartItem) {
-        if (cartItem.amount < 10) {
-            cartItem.amount++;
+    if (indexInCart !== -1) {
+        if (cart[indexInCart].amount < 10) {
+            cart[indexInCart].amount++;
         }
     } else {
          cart.push({ 
             name: dish.name, 
             price: dish.price,
             amount: 1 
-        
         });
     }
 
     renderCart();
 } 
 
-function reduceAmountCart(index){
-    let amountRef = document.getElementById(`amount-${index}`);
-    let currentAmount = parseInt(amountRef.innerText);
+function isInCart(dishName){
+    for (let index = 0; index < cart.length; index++) {
+        if(cart[index].name === dishName){
+            return index;
+        }
+    }
+    return -1; 
+}
 
-    if (currentAmount <= 1) {
+function reduceAmountCart(index){
+    if (cart[index].amount <= 1) {
         removeDishFromCart(index);
     } else {
-        amountRef.innerText = currentAmount - 1;
-        updateSum(index);
+        cart[index].amount--;
+        renderCart();
     }
 }
 
 function removeDishFromCart(index){
-    let cartDishRef = document.getElementById(`cartDish-${index}`);
-    cartDishRef.remove();
-}
-
-function updateSum(index) {
-    const amountRef = document.getElementById(`amount-${index}`);
-    const sumPerDishRef = document.getElementById(`sum-${index}`);
-    const currentAmount = parseInt(amountRef.innerText);
-    const price = dishes[index].price;
-
-    sumPerDishRef.innerText = (currentAmount * price).toFixed(2) + " €";
+    cart.splice(index, 1);
+    renderCart();
 }
 
 function getCartItemTotals(){
