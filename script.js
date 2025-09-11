@@ -54,6 +54,8 @@ function addToCart(index){
     }
 
     renderCart();
+
+    document.getElementById('cart').classList.add('open');
 } 
 
 function isInCart(dishIndex){
