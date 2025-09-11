@@ -10,6 +10,11 @@ function toggleOverlay(){
     cartRef.classList.toggle("open")
 }
 
+function toggleHamburgerMenu() {
+  const respMenu = document.getElementById('respMenu');
+  respMenu.classList.toggle("show");
+}
+
 function renderMenu(){
     let menuRef = document.getElementById('menu');
     let renderedMenu = `<h2>Hauptgerichte</h2>`;
@@ -30,11 +35,13 @@ function renderCart(){
 
       for (let index = 0; index < cart.length; index++) {
         let item = cart[index];
-
         contentCartRef.innerHTML += templateCartItem(item, index, cartItemSums[index]);
     }
 
-     document.getElementById('cartTotal').innerHTML = `Gesamt: ${total.toFixed(2)} €`;
+    document.getElementById('cartTotal').innerHTML = `Gesamt: ${total.toFixed(2)} €`;
+    
+    document.getElementById('mobileCartAmount').textContent = cart.reduce((sum, item) => sum + item.amount, 0);
+    document.getElementById('mobileCartTotal').textContent = `${total.toFixed(2)} €`;
 }
 
 function increaseAmountCart(indexInCart){
@@ -60,8 +67,9 @@ function addToCart(index){
     }
 
     renderCart();
-
+    if (window.innerWidth >= 920) {
     document.getElementById('cart').classList.add('open');
+    }
 } 
 
 function isInCart(dishIndex){

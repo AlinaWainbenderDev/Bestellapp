@@ -47,23 +47,33 @@
             src="assets/img/Logo.png"
             alt="Bestellapp Logo"
           />
+
           <nav>
             <button
-              onclick="toggleOverlay()"
-              class="hamburger-menu"
-              id="menu_toggle"
+              class="hamburger"
+              id="hamburgerBtn"
+              onclick="toggleHamburgerMenu()"
             >
               <span></span>
               <span></span>
               <span></span>
             </button>
+
+            <div id="respMenu" class="resp-menu">
+              <div class="flexboxHamburger">
+                <a href="#">Startseite</a>
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutz</a>
+                <a href="#">AGB</a>
+              </div>
+            </div>
           </nav>
         </div>
       </div>
     </header>
 
     <main class="content-limitation">
-      <div class="content-wrapper">
+      <section class="content-wrapper">
         <div class="hero-img"></div>
         <div class="logo-wrapper">
           <img
@@ -87,18 +97,41 @@
           <a href="#">Hauptgerichte</a>
           <a href="#">Beilagen</a>
         </nav>
-      </div>
-      <div class="img-menu"></div>
 
-      <section class="menu" id="menu"></section>
+        <div class="img-menu"></div>
 
-      <section id="cart" class="cart open">
-        <h2>Warenkorb</h2>
-        <div id="contentCart" class="contentCart"></div>
-        <div id="cartTotal">Gesamt: 0 €</div>
+        <div class="menu" id="menu"></div>
+      </section>
+
+      <section class="cart-wrapper">
+        <section id="cart" class="cart open">
+          <h2>Warenkorb</h2>
+
+          <div id="contentCart" class="content-cart"></div>
+          <div class="cart-footer">
+            <div id="cartTotal">Gesamt: 0 €</div>
+            <button class="cart-button" onclick="toggleOverlay()">
+              Bestellen
+            </button>
+          </div>
+        </section>
+        <section class="mobile-cart">
+          <button
+            id="cartOpenMobile"
+            class="cart-open-mobile"
+            onclick="toggleOverlay()"
+          >
+            <span>
+              <div class="flex-container">
+                <div id="mobileCartAmount">0</div>
+                <div>Warenkorb ansehen</div>
+                <div id="mobileCartTotal">0 €</div>
+              </div>
+            </span>
+          </button>
+        </section>
       </section>
     </main>
-
     <footer>
       <div class="footer-container content-limitation">
         <a href="#">Impressum</a>

@@ -10,12 +10,6 @@ body {
     margin: 0;
 }
 
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
 .flexbox{
   display: flex;
   justify-content: flex-start;
@@ -27,7 +21,6 @@ main {
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
-  position: relative;
 }
 
 a {
