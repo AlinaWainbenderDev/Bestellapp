@@ -21,7 +21,7 @@ function templateCartItem(item, index, sum){
         <div class="cart-dish-area">
             <button onclick="reduceAmountCart(${index})">-</button>
             <span id="amount-${index}">${item.amount}</span>
-            <button onclick="addToCart(${dishes.findIndex(d => d.name === item.name)})">+</button>
+            <button onclick="increaseAmountCart(${index})">+</button>
             <span id="sum-${index}">${sum} €</span>
             <button onclick="removeDishFromCart(${index})">
                 <img class="trash-icon" src="/assets/icons/recycle-bin-icon.svg" alt="Trash Icon">

@@ -37,13 +37,19 @@ function renderCart(){
      document.getElementById('cartTotal').innerHTML = `Gesamt: ${total.toFixed(2)} €`;
 }
 
+function increaseAmountCart(indexInCart){
+    if (cart[indexInCart].amount < 10) {
+        cart[indexInCart].amount++;
+    }
+
+    renderCart();
+}
+
 function addToCart(index){
     let indexInCart = isInCart(index); 
 
     if (indexInCart !== -1) {
-        if (cart[indexInCart].amount < 10) {
-            cart[indexInCart].amount++;
-        }
+        increaseAmountCart(index);
     } else {
          cart.push({ 
             dishIndex: index,
@@ -68,16 +74,19 @@ function isInCart(dishIndex){
 }
 
 function reduceAmountCart(index){
+
     if (cart[index].amount <= 1) {
-        removeDishFromCart(index);
+    removeDishFromCart(index);
     } else {
-        cart[index].amount--;
+    cart[index].amount--;
     }
+
     renderCart();
 }
 
 function removeDishFromCart(index){
     cart.splice(index, 1);
+    renderCart(); 
 }
 
 function getCartItemTotals(){
