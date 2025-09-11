@@ -49,7 +49,7 @@ function addToCart(index){
     let indexInCart = isInCart(index); 
 
     if (indexInCart !== -1) {
-        increaseAmountCart(index);
+        increaseAmountCart(indexInCart);
     } else {
          cart.push({ 
             dishIndex: index,
