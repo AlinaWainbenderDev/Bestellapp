@@ -38,8 +38,7 @@ function renderCart(){
 }
 
 function addToCart(index){
-    let dish = dishes[index];
-    let indexInCart = isInCart(dish.name); 
+    let indexInCart = isInCart(index); 
 
     if (indexInCart !== -1) {
         if (cart[indexInCart].amount < 10) {
@@ -47,8 +46,9 @@ function addToCart(index){
         }
     } else {
          cart.push({ 
-            name: dish.name, 
-            price: dish.price,
+            dishIndex: index,
+            name: dishes[index].name, 
+            price: dishes[index].price,
             amount: 1 
         });
     }
@@ -56,9 +56,9 @@ function addToCart(index){
     renderCart();
 } 
 
-function isInCart(dishName){
+function isInCart(dishIndex){
     for (let index = 0; index < cart.length; index++) {
-        if(cart[index].name === dishName){
+        if(cart[index].dishIndex === dishIndex){
             return index;
         }
     }
@@ -70,13 +70,12 @@ function reduceAmountCart(index){
         removeDishFromCart(index);
     } else {
         cart[index].amount--;
-        renderCart();
     }
+    renderCart();
 }
 
 function removeDishFromCart(index){
     cart.splice(index, 1);
-    renderCart();
 }
 
 function getCartItemTotals(){
