@@ -76,34 +76,3 @@ footer a{
     padding: 2vh 3vw;
     gap: 1.5vw;
 }
-
-
-@media screen and (max-width: 920px){
-    .mobile-cart {
-        display: block;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 10px;
-        background-color: rgb(255,128,0);
-        z-index: 1200;
-    }
-
-    .mobile-cart button {
-        width: 100%;
-        background-color: rgb(255,128,0);
-        border: none;
-        color: white;
-        font-size: 16px;
-        padding: 15px;
-        border-radius: 10px 10px 0 0;
-        cursor: pointer;
-    }
-
-    .mobile-cart .flex-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}

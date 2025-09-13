@@ -68,12 +68,13 @@
               </div>
             </div>
           </nav>
+
         </div>
       </div>
     </header>
 
     <main class="content-limitation">
-      <section class="content-wrapper">
+      <div class="content-wrapper">
         <div class="hero-img"></div>
         <div class="logo-wrapper">
           <img
@@ -101,37 +102,32 @@
         <div class="img-menu"></div>
 
         <div class="menu" id="menu"></div>
-      </section>
+      </div>
 
-      <section class="cart-wrapper">
-        <section id="cart" class="cart open">
+      <div class="cart-wrapper">
+        <section id="cart" class="cart">
           <h2>Warenkorb</h2>
 
           <div id="contentCart" class="content-cart"></div>
           <div class="cart-footer">
             <div id="cartTotal">Gesamt: 0 €</div>
-            <button class="cart-button" onclick="toggleOverlay()">
+            <button class="cart-button" onclick="toggleCart()">
               Bestellen
             </button>
           </div>
         </section>
-        <section class="mobile-cart">
-          <button
-            id="cartOpenMobile"
-            class="cart-open-mobile"
-            onclick="toggleOverlay()"
-          >
-            <span>
-              <div class="flex-container">
-                <div id="mobileCartAmount">0</div>
-                <div>Warenkorb ansehen</div>
-                <div id="mobileCartTotal">0 €</div>
-              </div>
-            </span>
-          </button>
-        </section>
-      </section>
+      </div>
     </main>
+    <div id="cartOverlay" class="cart">…</div>
+    <section class="mobile-cart">
+        <button id="mobileCartButton" class="mobile-cart-button" onclick="toggleCart()">
+          <div class="flex-container">
+            <div id="mobileCartAmount">0</div>
+            <div id="closeCartButton">Warenkorb ansehen</div>
+            <div id="mobileCartTotal">0 €</div>
+          </div>
+        </button>
+      </section>
     <footer>
       <div class="footer-container content-limitation">
         <a href="#">Impressum</a>
