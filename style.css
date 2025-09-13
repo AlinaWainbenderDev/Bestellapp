@@ -27,10 +27,6 @@ header{
     padding-left: 2%;
 }
 
-.categories p {
-    margin: 0px;
-}
-
 .menu{
     flex: 1;
     padding: 2vh 0;
