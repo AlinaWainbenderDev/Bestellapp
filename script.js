@@ -11,17 +11,6 @@ function toggleCart(){
     templateMobileCart();
 }
 
-function templateMobileCart(){
-    const buttonRef = document.getElementById('closeCartButton');
-    const cartRef = document.getElementById('cart');
-    
-    if(cartRef.classList.contains('open')){
-         buttonRef.textContent = 'Warenkorb schließen';
-    } else{
-    buttonRef.textContent=`Warenkorb ansehen`;
-    }
-}
-
 function toggleHamburgerMenu() {
   const respMenu = document.getElementById('respMenu');
   respMenu.classList.toggle("show");
@@ -51,9 +40,19 @@ function renderCart(){
     }
 
     document.getElementById('cartTotal').innerHTML = `Gesamt: ${total.toFixed(2)} €`;
-    
-    // document.getElementById('mobileCartAmount').textContent = cart.reduce((sum, item) => sum + item.amount, 0);
-    // document.getElementById('mobileCartTotal').textContent = `${total.toFixed(2)} €`;
+
+    updateMobileCart()
+}
+
+function updateMobileCart(){
+    const amountRef = document.getElementById('mobileCartAmount');
+    const totalRef = document.getElementById('mobileCartTotal');
+
+    const total = calculateCartTotal();
+    const totalItems = cart.reduce((sum, item) => sum + item.amount, 0);
+
+    amountRef.textContent = totalItems;
+    totalRef.textContent = `${total.toFixed(2)} €`; 
 }
 
 function increaseAmountCart(indexInCart){

@@ -30,3 +30,14 @@ function templateCartItem(item, index, sum){
     </div>
     `
 }
+
+function templateMobileCart(){
+    const buttonRef = document.getElementById('closeCartButton');
+    const cartRef = document.getElementById('cart');
+    
+    if(cartRef.classList.contains('open')){
+         buttonRef.textContent = 'Warenkorb schließen';
+    } else{
+    buttonRef.textContent=`Warenkorb ansehen`;
+    }
+}
