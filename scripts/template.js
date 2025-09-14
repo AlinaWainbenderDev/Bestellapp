@@ -10,7 +10,7 @@ function templateMenu(index){
                 </button>
             </div>
             <p>${dish.description}</p>
-            <p class="dish-price">${dish.price} €</p>
+            <p class="dish-price">${dish.price.toFixed(2)} €</p>
         </div>
     `
 }
