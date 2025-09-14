@@ -127,30 +127,17 @@ main{
     width: 100px;
 }
 
-.subtmit-overlay {
-    position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
 .submit-overlay.d_none {
   display: none;
 }
 
 .submit-overlay {
-  position: fixed;       
-  top: 0;
-  left: 0;
-  width: 100vw;          
-  height: 100vh;        
-  background-color: rgba(0, 0, 0, 0.5); 
-  display: flex;         
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
   justify-content: center;
-  align-items: center;        
+  align-items: center;
 }
 
 .submit-overlay-content {
@@ -271,6 +258,8 @@ main{
     .cartDishContainer{
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
         gap: 10px;
     }
 

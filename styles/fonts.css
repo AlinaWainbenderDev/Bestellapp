@@ -3,14 +3,13 @@
   text-align: center;
 }
 
-h1 {
+h1, h2, h3{
   margin: 0;
-  font-size: 42px;
-  padding-right: 1em;
 }
 
-.menu h3{
-  margin: 0;
+h1 {
+  font-size: 42px;
+  padding-right: 1em;
 }
 
 .menu h2{
@@ -29,7 +28,6 @@ h1 {
 
 body{
     font-family: 'Open Sans', sans-serif;
-    margin: 0;
     background-color: rgb(240,240,240);
 }
 

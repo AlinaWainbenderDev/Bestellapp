@@ -1,14 +1,15 @@
+header, footer {
+  background-color: rgb(255,128,0);
+}
+
 header{
-    background-color: rgb(255,128,0);
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
 .header-container{
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     height: 10vh;
 }
 
@@ -47,6 +48,12 @@ header{
      padding: 10px;
 }
 
+.dish:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease-in-out;
+}
+
 .dish p { 
     margin: 8px;
 }
@@ -57,7 +64,6 @@ header{
 }
 
 footer{
-    background-color: rgb(255,128,0);
     margin-top: auto;
 }
 
@@ -66,9 +72,13 @@ footer a{
 }
 
 .footer-container{
-    display: flex;
     justify-content: center;
-    align-items: center;
     padding: 2vh 3vw;
     gap: 1.5vw;
+}
+
+.header-container,
+.footer-container {
+  display: flex;
+  align-items: center;
 }

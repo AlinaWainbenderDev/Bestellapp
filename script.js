@@ -1,6 +1,7 @@
 function init(){
     renderMenu();
-    updateCart()
+    loadCartFromLocalStorage();
+    updateCart();
 }
 
 function updateCart() {
@@ -9,14 +10,12 @@ function updateCart() {
 }
 
 function toggleCart(){
-    let cartRef = document.getElementById("cart");
-    cartRef.classList.toggle("open");
-     updateMobileCart();
+    document.getElementById("cart").classList.toggle("open");
+    updateMobileCart();
 }
 
 function toggleHamburgerMenu() {
-  const respMenu = document.getElementById('respMenu');
-  respMenu.classList.toggle("show");
+  document.getElementById('respMenu').classList.toggle("show");
 }
 
 function renderMenu(){

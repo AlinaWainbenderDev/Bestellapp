@@ -134,11 +134,6 @@ function closeSubmitOverlay(){
 }
 
 function clearCart() {
-    if (cart.length === 0) {
-        return;
-    }
-
     cart = [];
-    updateMobileCart();
     updateCart();
 }
