@@ -1,6 +1,7 @@
 function init(){
     renderMenu();
     renderCart();
+    loadCartFromLocalStorage();
 }
 
 function toggleCart(){
@@ -23,4 +24,16 @@ function renderMenu(){
     }
 
     menuRef.innerHTML = renderedMenu;
+}
+
+function saveCartToLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function loadCartFromLocalStorage() {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+        renderCart();
+    }
 }

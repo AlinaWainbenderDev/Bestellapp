@@ -15,6 +15,8 @@ function addToCart(index){
     }
 
     renderCart();
+    saveCartToLocalStorage();
+    
     if (window.innerWidth >= 920) {
     document.getElementById('cart').classList.add('open');
     }
@@ -34,6 +36,7 @@ function increaseAmountCart(indexInCart){
         cart[indexInCart].amount++;
     }
     renderCart();
+    saveCartToLocalStorage();
 }
 
 function reduceAmountCart(index){
@@ -45,11 +48,13 @@ function reduceAmountCart(index){
     }
 
     renderCart();
+    saveCartToLocalStorage();
 }
 
 function removeDishFromCart(index){
     cart.splice(index, 1);
     renderCart(); 
+    saveCartToLocalStorage();
 }
 
 function getCartItemTotals(){
@@ -136,4 +141,5 @@ function clearCart() {
     cart = [];
     renderCart();
     updateMobileCart();
+    saveCartToLocalStorage();
 }
