@@ -51,10 +51,11 @@
 
 .add-button{
   position: relative;
-   width: 32px;  
+  width: 32px;  
   height: 32px;
   background: none;
   border: 2px solid rgb(255,128,0);
+  cursor: pointer;
 }
 
 .add-button span {
@@ -76,11 +77,51 @@
   height: 20px;
 }
 
-.trash-icon{
-  width: 20px;
+.minus-button {
+  position: relative;
+  width: 24px;  
+  height: 24px;
+  background: none;
+  border: 2px solid black;
+  cursor: pointer;
 }
 
-.cart-button{
+.minus-button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: black;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+  width: 15px;
+  height: 2px;
+}
+
+.trash-icon{
+  width: 20px;
+
+  background-color: rgba(253, 185, 117, 0.982);
+}
+
+.trash-button{
+  background-color: rgba(253, 185, 117, 0.982);
+  border: none;
+  cursor: pointer;
+}
+
+#openAndPayButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+#closeCartButton{
+  display: none;
+}
+
+.orderBtn{
     padding: 10px 20px;
     background-color: rgb(255,128,0);
     color: white;
@@ -90,7 +131,7 @@
     font-size: 16px;
 }
 
-.cart-button:hover{
+.orderBtn:hover{
     cursor: pointer;
 }
 
@@ -161,8 +202,43 @@
   gap: 10px;
 }
 
+#orderBtn-mobile {
+  display: none;
+  width: 100%;
+  padding: 15px 20px;
+  margin: 15px 0;
+  background-color: rgb(255, 128, 0); /* dein Orange */
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#orderBtn-mobile:hover {
+  background-color: rgb(230, 115, 0); /* etwas dunkleres Orange */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+#orderBtn-mobile:active {
+  transform: translateY(0); /* Klick-Feedback */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
 @media screen and (max-width: 920px){
   .hamburger{
     display: flex;
   }
+
+  #closeCartButton{
+  display: flex;
+}
+
+#orderBtn-mobile {
+  display: block;
+}
 }

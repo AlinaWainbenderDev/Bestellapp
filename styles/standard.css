@@ -30,3 +30,7 @@ a {
 a:hover{
     cursor: pointer;
 }
+
+.d_none{
+  display: none;
+}

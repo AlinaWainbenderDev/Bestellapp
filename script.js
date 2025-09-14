@@ -6,7 +6,7 @@ function init(){
 function toggleCart(){
     let cartRef = document.getElementById("cart");
     cartRef.classList.toggle("open");
-    templateMobileCart();
+     updateMobileCart();
 }
 
 function toggleHamburgerMenu() {

@@ -1,11 +1,11 @@
 let dishes = [
     {
-        "name" : "Reisbandnudelsuppe",
+        "name" : "Pho Nudelsuppe",
         "price" : 6.50,
         "description" : "Leckere Suppe mit Reisbandnudeln, Gemüse und wahlweise Hähnchen oder Tofu.",
     },
     {
-        "name" : "Udom Nudeln",
+        "name" : "Udon Nudeln",
         "price" : 7.50,
         "description" : "Gebratene Udom Nudeln mit Gemüse und wahlweise Hähnchen oder Tofu.",
     },

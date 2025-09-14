@@ -96,4 +96,44 @@ function updateMobileCart(){
 
     amountRef.textContent = totalItems;
     totalRef.textContent = `${total.toFixed(2)} €`; 
+
+    renderMobileCart();
+}
+
+function renderMobileCart(){
+    
+    const buttonRef = document.getElementById('closeCartButton');
+    const cartRef = document.getElementById('cart');
+    
+    if(cartRef.classList.contains('open')){
+         buttonRef.textContent = 'Warenkorb schließen';
+    } else{
+    buttonRef.textContent=`Warenkorb ansehen`;
+    }
+}
+
+function renderSubmitOverlay(){
+    if (cart.length === 0) return;
+
+    const submitRef = document.getElementById('submit_Overlay');
+    submitRef.innerHTML = templateSubmitOverlay();
+
+    submitRef.classList.remove('d_none');
+    clearCart();
+}
+
+function closeSubmitOverlay(){
+    const submitRef = document.getElementById('submit_Overlay');
+    submitRef.classList.add('d_none');
+    clearCart();
+}
+
+function clearCart() {
+    if (cart.length === 0) {
+        return;
+    }
+
+    cart = [];
+    renderCart();
+    updateMobileCart();
 }
