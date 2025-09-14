@@ -1,7 +1,11 @@
 function init(){
     renderMenu();
+    updateCart()
+}
+
+function updateCart() {
     renderCart();
-    loadCartFromLocalStorage();
+    saveCartToLocalStorage();
 }
 
 function toggleCart(){
