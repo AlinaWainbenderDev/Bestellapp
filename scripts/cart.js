@@ -16,7 +16,7 @@ function addToCart(index){
 
     renderCart();
     saveCartToLocalStorage();
-    
+
     if (window.innerWidth >= 920) {
     document.getElementById('cart').classList.add('open');
     }
@@ -120,11 +120,15 @@ function renderMobileCart(){
 function renderSubmitOverlay(){
     if (cart.length === 0) return;
 
+    const cartRef = document.getElementById('cart');
+    cartRef.classList.remove('open'); 
+
     const submitRef = document.getElementById('submit_Overlay');
     submitRef.innerHTML = templateSubmitOverlay();
-
     submitRef.classList.remove('d_none');
+
     clearCart();
+    renderMobileCart();
 }
 
 function closeSubmitOverlay(){
