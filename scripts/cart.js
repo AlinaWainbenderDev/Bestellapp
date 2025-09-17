@@ -1,12 +1,20 @@
 let cart = [];
 
 function addToCart(category, index){
-    let indexInCart = isInCart(index); 
-
+    let indexInCart = isInCart(category, index); 
     if (indexInCart !== -1) {
         increaseAmountCart(indexInCart);
     } else {
-        const dish = dishes[category][index];
+        pushToCart(category, index);
+    }
+    updateCart()
+    if (window.innerWidth >= 920) {
+    document.getElementById('cart').classList.add('open');
+    }
+} 
+
+function pushToCart(category, index){
+    const dish = dishes[category][index];
          cart.push({ 
             category: category, 
             dishIndex: index,
@@ -14,14 +22,7 @@ function addToCart(category, index){
             price: dish.price,
             amount: 1 
         });
-    }
-
-    updateCart()
-
-    if (window.innerWidth >= 920) {
-    document.getElementById('cart').classList.add('open');
-    }
-} 
+}
 
 function isInCart(category, dishIndex){
     for (let index = 0; index < cart.length; index++) {
@@ -46,7 +47,6 @@ function reduceAmountCart(index){
     } else {
     cart[index].amount--;
     }
-
     updateCart()
 }
 
@@ -79,14 +79,11 @@ function renderCart(){
 
     const cartItemSums = getCartItemTotals();
     const total = calculateCartTotal();
-
       for (let index = 0; index < cart.length; index++) {
         let item = cart[index];
         contentCartRef.innerHTML += templateCartItem(item, index, cartItemSums[index]);
     }
-
     document.getElementById('cartTotal').innerHTML = `Gesamt: ${total.toFixed(2)} €`;
-
     updateMobileCart()
 }
 
@@ -117,20 +114,23 @@ function renderMobileCart(){
 
 function renderSubmitOverlay(){
     if (cart.length === 0) return;
-
-    const cartRef = document.getElementById('cart');
-    cartRef.classList.remove('open'); 
+    document.getElementById('cart').classList.remove('open'); 
 
     const submitRef = document.getElementById('submit_Overlay');
     submitRef.innerHTML = templateSubmitOverlay();
     submitRef.classList.remove('d_none');
+   
+    setupSubmitOverlayAccessibility(submitRef)
 
+    clearCart();
+    renderMobileCart();
+}
+
+function setupSubmitOverlayAccessibility(submitRef){
     submitRef.focus();
     document.getElementById('closeSubmitBtn').addEventListener('click', closeSubmitOverlay);
     document.addEventListener('keydown', escCloseOverlay);
 
-    clearCart();
-    renderMobileCart();
 }
 
 function closeSubmitOverlay(){

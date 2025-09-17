@@ -213,7 +213,7 @@ button:focus, a:focus {
   margin: 15px 0;
   background-color: rgb(255,100,0); /* dein Orange */
   color: white;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: bold;
   border: none;
   border-radius: 8px;

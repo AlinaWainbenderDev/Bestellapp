@@ -22,22 +22,35 @@ function renderMenu(){
     let menuRef = document.getElementById('menu');
     let renderedMenu = "";
 
-    renderedMenu += `<h2 id="mainDishes">Hauptgerichte</h2>`;
-    for (let index = 0; index < dishes.mainDishes.length; index++) {
-        renderedMenu += templateMenu('mainDishes', index);
-    }
-
-    renderedMenu += `<h2 id="sideDishes">Beilagen</h2>`;
-    for (let index = 0; index < dishes.sideDishes.length; index++) {
-        renderedMenu += templateMenu('sideDishes', index);
-    }
-
-    renderedMenu += `<h2 id="drinks">Getränke</h2>`;
-    for (let index = 0; index < dishes.drinks.length; index++) {
-        renderedMenu += templateMenu('drinks', index);
-    }
+    renderedMenu += renderMainDishes();
+    renderedMenu += renderSideDishes();
+    renderedMenu += renderDrinks();
 
     menuRef.innerHTML = renderedMenu;
+}
+
+function renderMainDishes(){
+    let html = `<h2 id="mainDishes">Hauptgerichte</h2>`;
+    for (let index = 0; index < dishes.mainDishes.length; index++) {
+        html += templateMenu('mainDishes', index);
+    }
+    return html;
+}
+
+function renderSideDishes(){
+    let html = `<h2 id="sideDishes">Beilagen</h2>`;
+    for (let index = 0; index < dishes.sideDishes.length; index++) {
+        html += templateMenu('sideDishes', index);
+    }
+    return html;
+}
+
+function renderDrinks(){
+    let html = `<h2 id="drinks">Getränke</h2>`;
+    for (let index = 0; index < dishes.drinks.length; index++) {
+        html += templateMenu('drinks', index);
+    }
+    return html;
 }
 
 function saveCartToLocalStorage() {
