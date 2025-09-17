@@ -145,7 +145,7 @@ button:focus, a:focus {
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 30px;
+  gap: 80px;
 }
 
 .hamburger {
