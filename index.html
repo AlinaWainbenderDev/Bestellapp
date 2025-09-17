@@ -48,10 +48,13 @@
             alt="Bestellapp Logo"
           />
 
-          <nav>
+          <nav aria-label="Hauptnavigation">
             <button
               class="hamburger"
               id="hamburgerBtn"
+              aria-controls="respMenu"
+              aria-expanded="false"
+              aria-label="Menü öffnen"
               onclick="toggleHamburgerMenu()"
             >
               <span></span>
@@ -60,29 +63,30 @@
             </button>
 
             <div id="respMenu" class="resp-menu">
-              <div class="flexboxHamburger">
-                <a href="index.html">Startseite</a>
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-                <a href="agb.html">AGB</a>
-              </div>
+              <ul class="flexboxHamburger">
+               <li><a href="index.html">Startseite</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
+                <li><a href="agb.html">AGB</a></li>
+              </ul>
             </div>
           </nav>
         </div>
       </div>
     </header>
 
-    <main class="content-limitation">
+    <main class="content-limitation" id="mainContent">
       <div class="content-wrapper">
         <div class="hero-img"></div>
         <div class="logo-wrapper">
           <img
             class="bowl-Icon"
-            src="/assets/icons/soup-cup-and-soup-icon.svg"
+            src="assets/icons/soup-cup-and-soup-icon.svg"
+            alt="Bowl Icon"
           />
         </div>
 
-        <div id="submit_Overlay" class="submit-overlay d_none"></div>
+        <div id="submit_Overlay" class="submit-overlay d_none" role="dialog" aria-labelledby="submitTitle" aria-describedby="submitDesc" tabindex="-1"></div>
 
         <div class="restaurant-info">
           <div class="flexbox">
@@ -93,7 +97,7 @@
         </div>
         <nav class="categories">
           <img
-            src="/assets/icons/angle-circle-right-icon.png"
+            src="assets/icons/angle-circle-right-icon.png"
             alt="Pfeil Icon"
           />
           <a href="#">Hauptgerichte</a>
@@ -110,10 +114,10 @@
           <h2>Warenkorb</h2>
 
           <div id="contentCart" class="content-cart"></div>
-          <button id="orderBtn-mobile" onclick="renderSubmitOverlay()">Bestellen</button>
+          <button id="orderBtn-mobile" aria-label="Bestellung abschicken" onclick="renderSubmitOverlay()">Bestellen</button>
           <div class="cart-footer">
             <div id="cartTotal">Gesamt: 0 €</div>
-            <button class="orderBtn" onclick="renderSubmitOverlay()">
+            <button class="orderBtn" aria-label="Bestellung abschicken" onclick="renderSubmitOverlay()">
               Bestellen
             </button>
           </div>
@@ -124,6 +128,9 @@
       <button
         id="mobileCartButton"
         class="mobile-cart-button"
+        aria-controls="cart"
+        aria-expanded="false"
+        aria-label="Warenkorb"
         onclick="toggleCart()"
       >
         <div class="flex-container">

@@ -123,6 +123,10 @@ function renderSubmitOverlay(){
     submitRef.innerHTML = templateSubmitOverlay();
     submitRef.classList.remove('d_none');
 
+    submitRef.focus();
+    document.getElementById('closeSubmitBtn').addEventListener('click', closeSubmitOverlay);
+    document.addEventListener('keydown', escCloseOverlay);
+
     clearCart();
     renderMobileCart();
 }
@@ -131,9 +135,17 @@ function closeSubmitOverlay(){
     const submitRef = document.getElementById('submit_Overlay');
     submitRef.classList.add('d_none');
     clearCart();
+    renderMobileCart();
 }
 
 function clearCart() {
     cart = [];
     updateCart();
+}
+
+function escCloseOverlay(e){
+    if(e.key === "Escape"){
+        closeSubmitOverlay();
+        document.removeEventListener('keydown', escCloseOverlay);
+    }
 }
