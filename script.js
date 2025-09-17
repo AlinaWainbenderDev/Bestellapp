@@ -20,10 +20,21 @@ function toggleHamburgerMenu() {
 
 function renderMenu(){
     let menuRef = document.getElementById('menu');
-    let renderedMenu = `<h2>Hauptgerichte</h2>`;
+    let renderedMenu = "";
 
-    for (let index = 0; index < dishes.length; index++) {
-        renderedMenu += templateMenu(index);
+    renderedMenu += `<h2>Hauptgerichte</h2>`;
+    for (let index = 0; index < dishes.mainDishes.length; index++) {
+        renderedMenu += templateMenu('mainDishes', index);
+    }
+
+    renderedMenu += `<h2>Beilagen</h2>`;
+    for (let index = 0; index < dishes.sideDishes.length; index++) {
+        renderedMenu += templateMenu('sideDishes', index);
+    }
+
+    renderedMenu += `<h2>Getränke</h2>`;
+    for (let index = 0; index < dishes.drinks.length; index++) {
+        renderedMenu += templateMenu('drinks', index);
     }
 
     menuRef.innerHTML = renderedMenu;

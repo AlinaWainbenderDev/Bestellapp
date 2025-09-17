@@ -1,15 +1,17 @@
 let cart = [];
 
-function addToCart(index){
+function addToCart(category, index){
     let indexInCart = isInCart(index); 
 
     if (indexInCart !== -1) {
         increaseAmountCart(indexInCart);
     } else {
+        const dish = dishes[category][index];
          cart.push({ 
+            category: category, 
             dishIndex: index,
-            name: dishes[index].name, 
-            price: dishes[index].price,
+            name: dish.name, 
+            price: dish.price,
             amount: 1 
         });
     }
@@ -21,9 +23,9 @@ function addToCart(index){
     }
 } 
 
-function isInCart(dishIndex){
+function isInCart(category, dishIndex){
     for (let index = 0; index < cart.length; index++) {
-        if(cart[index].dishIndex === dishIndex){
+        if(cart[index].category === category && cart[index].dishIndex === dishIndex){
             return index;
         }
     }
