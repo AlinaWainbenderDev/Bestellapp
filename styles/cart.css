@@ -126,6 +126,10 @@ main{
     gap: 10px;
 }
 
+.amount-style img{
+    width: 30px;
+}
+
 .sum-style-container{
     width: 100px;
 }
@@ -239,6 +243,7 @@ main{
 .mobile-cart-button{
     font-size: 18px;
     justify-content: center;
+    margin: 10px;
 }
 
 .mobile-cart{
@@ -268,16 +273,11 @@ main{
         gap: 10px;
     }
 
-    .mobile-cart-button{
-        font-size: 20px;
-        margin: 10px;
-    }
-
     #orderBtn-mobile{
         font-size: 24px;
     } 
 
     #mobileCartTotal {
-        width: 82px;
+        width: 100px;
     }
 }

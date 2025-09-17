@@ -142,9 +142,10 @@ button:focus, a:focus {
 
 .flex-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 30px;
 }
 
 .hamburger {
@@ -244,5 +245,11 @@ button:focus, a:focus {
 
 #orderBtn-mobile {
   display: block;
+}
+}
+
+@media screen and (max-width: 567px){
+  .flex-container{
+  gap: 15px;
 }
 }
