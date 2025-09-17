@@ -24,9 +24,25 @@ header{
     justify-content: flex-start;
     align-items: center;
     gap: 2vw;
-    background-color: rgba(253, 185, 117, 0.982);
+    background-color: rgb(255,100,0);
     padding-left: 2%;
 }
+
+.categories a{
+    text-decoration: none;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.categories a:hover,
+.categories a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+    color: #fff;
+}
+
 
 .menu{
     flex: 1;

@@ -22,17 +22,17 @@ function renderMenu(){
     let menuRef = document.getElementById('menu');
     let renderedMenu = "";
 
-    renderedMenu += `<h2>Hauptgerichte</h2>`;
+    renderedMenu += `<h2 id="mainDishes">Hauptgerichte</h2>`;
     for (let index = 0; index < dishes.mainDishes.length; index++) {
         renderedMenu += templateMenu('mainDishes', index);
     }
 
-    renderedMenu += `<h2>Beilagen</h2>`;
+    renderedMenu += `<h2 id="sideDishes">Beilagen</h2>`;
     for (let index = 0; index < dishes.sideDishes.length; index++) {
         renderedMenu += templateMenu('sideDishes', index);
     }
 
-    renderedMenu += `<h2>Getränke</h2>`;
+    renderedMenu += `<h2 id="drinks">Getränke</h2>`;
     for (let index = 0; index < dishes.drinks.length; index++) {
         renderedMenu += templateMenu('drinks', index);
     }

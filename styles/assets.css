@@ -50,7 +50,8 @@ button:focus, a:focus {
 }
 
 .categories img{
-  width: 2em;
+    width: 24px;
+    height: 24px;
 }
 
 .add-button, .minus-button {
@@ -127,7 +128,7 @@ button:focus, a:focus {
 
 .orderBtn{
     padding: 10px 20px;
-    background-color: rgb(255,128,0);
+    background-color: rgb(255,100,0);
     color: white;
     border: solid 2px;
     border-color: white;
@@ -210,7 +211,7 @@ button:focus, a:focus {
   width: 100%;
   padding: 15px 20px;
   margin: 15px 0;
-  background-color: rgb(255, 128, 0); /* dein Orange */
+  background-color: rgb(255,100,0); /* dein Orange */
   color: white;
   font-size: 32px;
   font-weight: bold;

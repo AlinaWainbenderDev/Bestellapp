@@ -20,19 +20,22 @@ main{
 
 .cart{
     position: sticky;
+    display: flex;
+    flex-direction: column;
     top: 0;
     background-color: rgb(253,186,120);
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
     border: 3px solid rgb(255,128,0);
     padding: 2vw;
     height: calc(95vh - 10vh);
-    display: flex;
-    flex-direction: column;
+    
 }
 
 .content-cart{
     flex: 1;
     margin: 10px 0;
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
 .cart-dish-area{
@@ -194,7 +197,7 @@ main{
 }
 
 .cart h2{
-    font-size: 48px;
+    font-size: 42px;
 }
 
 .cart.open{
@@ -210,7 +213,8 @@ main{
 }
 
 .content-cart{
-    flex: 0;
+    overflow-y: auto;
+    max-height: calc(100% - 250px);
 }
 
 .cart-dish-area{
