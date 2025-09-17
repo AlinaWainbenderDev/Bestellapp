@@ -44,7 +44,7 @@ function templateCartItem(item, index, sum){
                 aria-label="${item.name} aus dem Warenkorb entfernen"
                 onclick="removeDishFromCart(${index})" 
                 class="trash-button">
-                    <img class="trash-icon" src="/assets/icons/recycle-bin-icon.svg" alt="">
+                    <img class="trash-icon" src="assets/icons/recycle-bin-icon.svg" alt="">
             </button>
         </div>
     </div>
