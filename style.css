@@ -98,3 +98,16 @@ footer a{
   display: flex;
   align-items: center;
 }
+
+@media screen and (max-width: 567px){
+
+
+    .categories{
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .categories img{
+        display: none;
+    }
+}
